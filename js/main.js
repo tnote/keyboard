@@ -96,7 +96,7 @@ $("document").ready(function () {
     var e_y_offset = window.scrollY + e.getBoundingClientRect().top;
 
     html2canvas(e, {
-      scale: 1,
+      scale: 3,
       backgroundColor: null,
       width: e_width,
       height: e_height,
