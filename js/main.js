@@ -1,5 +1,5 @@
 let OS = { windows: "windows", mac: "mac", other: "other", userText: "text" };
-var myOs = OS.windows; // default
+var myOs = OS.mac; // default
 
 var prefixKeys = "";
 var prefixKeysHtml = "";
@@ -12,7 +12,8 @@ $("document").ready(function () {
   } else if (platform.os.family.indexOf("Mac") != -1) {
     setCustomOS(OS.mac);
   } else {
-    setCustomOS(OS.other);
+    // setCustomOS(OS.other);
+    setCustomOS(myOs);
   }
 
   // on OS selection radio button click
