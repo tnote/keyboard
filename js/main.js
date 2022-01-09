@@ -89,7 +89,7 @@ $("document").ready(function () {
   $("#img-preview-div").hide();
 
   function getResult(a) {
-    return (Math.floor(a * 100) / 100).toFixed(2);
+    return (Math.floor(a * 100) / 100).toFixed(1);
   }
   $("#scale-html_btn").click(function () {
     //   output-location container-output-location
@@ -97,8 +97,8 @@ $("document").ready(function () {
     var btn = document.getElementById("scale-html_btn");
     var scaleV = btn.getAttribute("scaleValue");
     scaleV = scaleV - 0.1;
-    if (scaleV < 0.5) {
-      scaleV = 1.0;
+    if (scaleV < 0.26) {
+      scaleV = 1.5;
     }
     scaleV = getResult(scaleV);
     btn.setAttribute("scaleValue", `${scaleV}`);
@@ -107,12 +107,16 @@ $("document").ready(function () {
   });
 
   $("#save-btn").click(function () {
-    var e = document.getElementById("container-output-location");
-    var e_width = e.offsetWidth;
-    var e_height = e.offsetHeight;
+    var e = document.getElementById("output-location");
+    // 缩小时，图片也缩小。
+    var btn = document.getElementById("scale-html_btn");
+    var scaleV = btn.getAttribute("scaleValue");
+    var e_width = e.offsetWidth * scaleV;
+    var e_height = e.offsetHeight * scaleV;
     var e_x_offset = window.scrollX + e.getBoundingClientRect().left;
     var e_y_offset = window.scrollY + e.getBoundingClientRect().top;
 
+    // alert(`${e_width} ${e_height}  ${e_x_offset}  ${e_y_offset} `)
     html2canvas(e, {
       scale: 3,
       backgroundColor: "#eaf9e9",
