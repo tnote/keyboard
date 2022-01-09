@@ -107,7 +107,7 @@ $("document").ready(function () {
   });
 
   $("#save-btn").click(function () {
-    var e = document.getElementById("output-location");
+    var e = document.getElementById("container-output-location");
     var e_width = e.offsetWidth;
     var e_height = e.offsetHeight;
     var e_x_offset = window.scrollX + e.getBoundingClientRect().left;
@@ -115,7 +115,7 @@ $("document").ready(function () {
 
     html2canvas(e, {
       scale: 3,
-      backgroundColor: null,
+      backgroundColor: "#eaf9e9",
       width: e_width,
       height: e_height,
       x: e_x_offset,

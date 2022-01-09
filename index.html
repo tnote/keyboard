@@ -25,17 +25,23 @@
 		}
 	</style>
 	<style>
+		:root {
+			--image-bgColor: #eaf9e9;
+		}
+
 		#container-output-location {
 			/* transform: scale(1.0); */
-			background-color: #eaf9e9;
+			background-color: var(--image-bgColor);
+			;
 			display: inline-block;
 		}
 
 		#output-location {
 			/* background-color: #ACFFA830; */
-			background-color: #eaf9e9;
+			background-color: var(--image-bgColor);
+			;
 			border-radius: 3px;
-			padding: 40px 20px;
+			padding: 40px 40px;
 			white-space: nowrap;
 			font-size: 64px;
 			color: #1974ff;
@@ -76,8 +82,9 @@
 			border: 1px dashed;
 		}
 
-		#img-out-preview img{
-			max-width: 100%  !important;
+		#img-out-preview img {
+			max-width: 100% !important;
+			text-align: center;
 		}
 	</style>
 </head>
@@ -166,4 +173,3 @@
 </body>
 
 </html>
-
