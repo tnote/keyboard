@@ -88,6 +88,14 @@ $("document").ready(function () {
 
   $("#img-preview-div").hide();
 
+ 
+ $("#copy-input-text").click(function () {
+    var copyText = document.getElementById("kb-input");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+  });
+
   function getResult(a) {
     return (Math.floor(a * 100) / 100).toFixed(1);
   }
