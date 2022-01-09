@@ -1239,7 +1239,7 @@ video.video-responsive::before {
   padding-right: 0.4rem;
   width: 100%;
 }
-.container.grid-xl {
+/* .container.grid-xl {
   max-width: 1296px;
 }
 .container.grid-lg {
@@ -1253,7 +1253,7 @@ video.video-responsive::before {
 }
 .container.grid-xs {
   max-width: 496px;
-}
+} */
 .show-lg,
 .show-md,
 .show-sm,
