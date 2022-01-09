@@ -128,8 +128,8 @@ $("document").ready(function () {
     html2canvas(e, {
       scale: 3,
       backgroundColor: "#eaf9e9",
-      width: e_width,
-      height: e_height,
+      width: e_width + 15,
+      height: e_height + 25,
       x: e_x_offset,
       y: e_y_offset,
     }).then((canvas) => {
