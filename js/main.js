@@ -88,6 +88,24 @@ $("document").ready(function () {
 
   $("#img-preview-div").hide();
 
+  function getResult (a) {
+    return (Math.floor(a * 100) / 100).toFixed(2)
+  }
+  $("#scale-html_btn").click(function () {
+    //   output-location container-output-location
+    var e = document.getElementById("output-location");
+    var btn = document.getElementById("scale-html_btn");
+    var scaleV = btn.getAttribute("scaleValue");
+    scaleV = scaleV - 0.1;
+    if (scaleV < 0.5) {
+        scaleV = 1.0;
+    }
+    scaleV = getResult(scaleV);
+    btn.setAttribute("scaleValue", `${scaleV}`);
+    btn.innerText = `缩小比例: ${scaleV}`;
+    e.style.transform = `scale(${scaleV})`;
+  });
+
   $("#save-btn").click(function () {
     var e = document.getElementById("output-location");
     var e_width = e.offsetWidth;

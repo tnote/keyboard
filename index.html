@@ -26,42 +26,44 @@
 	</style>
 	<style>
 		#container-output-location {
-			/* transform: scale(5.0); */
+			/* transform: scale(1.0); */
+			background-color: #eaf9e9;
 			display: inline-block;
 		}
 
 		#output-location {
-			background-color: #ACFFA830;
+			/* background-color: #ACFFA830; */
+			background-color: #eaf9e9;
 			border-radius: 3px;
 			padding: 40px 20px;
 			white-space: nowrap;
 			font-size: 64px;
 			color: #1974ff;
-			
+
 		}
 
 		/* keystyles stack overflow */
 		kbd {
-    display: inline-block;
-    margin: 0.1em;
-    padding: 0.1em 0.5em;
-    /* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
-    /* font-family: Verdana, "Segoe UI", Arial, "Microsoft Yahei", sans-serif; */
-    font-family: Verdana, Monaco, Menlo, PingFang SC, Avenir, Arial, arial, sans-serif;
-    font-size: 80px;
-    line-height: 1.4;
-    /* color: #f1f1f1; */
-    color: #faff23;
-    /* text-shadow: 0 1px 0 rgb(199 112 112); */
-    background-color: #2b2b2b;
-    border: 2px solid #6601565c;
-    border-radius: 8px;
-    /* box-shadow: 0 1px 0 rgb(12 13 14 / 20%), 0 0 0 2px #fff inset; */
-    /* box-shadow: -2px -2px 9px 2px rgb(0 0 0 / 30%), 4px 4px 20px 0 rgb(231 99 15 / 69%); */
-		box-shadow: -2px -2px 9px 2px rgb(122 223 63 / 69%), 4px 4px 20px 0 rgb(231 99 15 / 69%);
+			display: inline-block;
+			margin: 0.1em;
+			padding: 0.1em 0.5em;
+			/* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
+			/* font-family: Verdana, "Segoe UI", Arial, "Microsoft Yahei", sans-serif; */
+			font-family: Verdana, Monaco, Menlo, PingFang SC, Avenir, Arial, arial, sans-serif;
+			font-size: 80px;
+			line-height: 1.4;
+			/* color: #f1f1f1; */
+			color: #faff23;
+			/* text-shadow: 0 1px 0 rgb(199 112 112); */
+			background-color: #2b2b2b;
+			border: 2px solid #6601565c;
+			border-radius: 8px;
+			/* box-shadow: 0 1px 0 rgb(12 13 14 / 20%), 0 0 0 2px #fff inset; */
+			/* box-shadow: -2px -2px 9px 2px rgb(0 0 0 / 30%), 4px 4px 20px 0 rgb(231 99 15 / 69%); */
+			box-shadow: -2px -2px 9px 2px rgb(122 223 63 / 69%), 4px 4px 20px 0 rgb(231 99 15 / 69%);
 
-    white-space: nowrap;
-}
+			white-space: nowrap;
+		}
 
 		#credits {
 			position: fixed;
@@ -125,6 +127,8 @@
 				<br />
 				<div>
 					<button class="btn btn-primary btn-lg" type="button" id="save-btn">Generate image</button>
+					<button class="btn btn-primary btn-lg" type="button" id="scale-html_btn" scaleValue="1.0"
+						onclick="void(0)">缩小比例: 1.0</button>
 				</div>
 
 				<div id="img-preview-div">
@@ -158,3 +162,4 @@
 </body>
 
 </html>
+
