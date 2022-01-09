@@ -88,8 +88,8 @@ $("document").ready(function () {
 
   $("#img-preview-div").hide();
 
-  function getResult (a) {
-    return (Math.floor(a * 100) / 100).toFixed(2)
+  function getResult(a) {
+    return (Math.floor(a * 100) / 100).toFixed(2);
   }
   $("#scale-html_btn").click(function () {
     //   output-location container-output-location
@@ -98,7 +98,7 @@ $("document").ready(function () {
     var scaleV = btn.getAttribute("scaleValue");
     scaleV = scaleV - 0.1;
     if (scaleV < 0.5) {
-        scaleV = 1.0;
+      scaleV = 1.0;
     }
     scaleV = getResult(scaleV);
     btn.setAttribute("scaleValue", `${scaleV}`);
@@ -265,12 +265,23 @@ $("document").ready(function () {
       e.key != "Alt" &&
       e.key != "Meta"
     ) {
-      kbString += e.key;
-      console.log(e.key);
+        console.log(e.key);
+        var tempKey = e.key;
+        if (tempKey == "ArrowLeft") {
+            tempKey = "⬅"
+        } else if (tempKey == "ArrowRight") {
+            tempKey = "👉🏻"
+        } else if (tempKey == "ArrowUp") {
+            tempKey = "⬆"
+        } else if (tempKey == "ArrowDown") {
+            tempKey = "⬇"
+        }
+      kbString += tempKey;
+      
       if (keyMap[id] != undefined) {
         kbHtmlString += "<kbd>" + keyMap[id] + "</kbd>";
       } else {
-        kbHtmlString += "<kbd>" + e.key + "</kbd>";
+        kbHtmlString += "<kbd>" + tempKey + "</kbd>";
       }
     }
 
