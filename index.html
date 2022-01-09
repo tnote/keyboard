@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Keyboard Shortcut Image Generator v0.1</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
-		<link rel="stylesheet" href="css/spectre.min.css" />
-		<link rel="stylesheet" href="css/spectre-exp.min.css" />
-		<link rel="stylesheet" href="css/spectre-icons.min.css" />
-		<link rel="stylesheet" href="css/keys.css" />
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script src="js/platform1.3.5.js"></script>
-		<script src="js/html2canvas.min.js"></script>
-		<script src="js/main.js"></script>
-		<style>
-        .grid-hero h2 {
-            color: #455060;
-            font-size: .9rem;
-            font-weight: 400;
-            line-height: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-    </style>
-		<style>
-        #container-output-location {
-           /* transform: scale(5.0); */
-          display: inline-block;
-        }
-        
-        #output-location {
-          /* background-color: #ACFFA820; */
-          border-radius: 3px;
-          padding: 10px;
-        }
-    
-        /* keystyles stack overflow */
-        kbd {
-          display: inline-block;
-          margin: .1em;
-          padding: .1em .6em;
-          font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-          font-size: 32px;
-          line-height: 1.4;
-          color: #242729;
-          text-shadow: 0 1px 0 #FFF;
-          background-color: #e1e3e5;
-          border: 1px solid #adb3b9;
-          border-radius: 3px;
-          box-shadow: 0 1px 0 rgba(12,13,14,0.2), 0 0 0 2px #FFF inset;
-          white-space: nowrap;
-        }
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Keyboard Shortcut Image Generator v0.1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+	<link rel="stylesheet" href="css/spectre.min.css" />
+	<link rel="stylesheet" href="css/spectre-exp.min.css" />
+	<link rel="stylesheet" href="css/spectre-icons.min.css" />
+	<link rel="stylesheet" href="css/keys.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/platform1.3.5.js"></script>
+	<script src="js/html2canvas.min.js"></script>
+	<script src="js/main.js"></script>
+	<style>
+		.grid-hero h2 {
+			color: #455060;
+			font-size: .9rem;
+			font-weight: 400;
+			line-height: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+	</style>
+	<style>
+		#container-output-location {
+			/* transform: scale(5.0); */
+			display: inline-block;
+		}
+
+		#output-location {
+			/* background-color: #ACFFA820; */
+			border-radius: 3px;
+			padding: 10px;
+		}
+
+		/* keystyles stack overflow */
+		kbd {
+			display: inline-block;
+			margin: .1em;
+			padding: .1em .6em;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 32px;
+			line-height: 1.4;
+			color: #242729;
+			text-shadow: 0 1px 0 #FFF;
+			background-color: #e1e3e5;
+			border: 1px solid #adb3b9;
+			border-radius: 3px;
+			box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset;
+			white-space: nowrap;
+		}
 
 		#credits {
 			position: fixed;
@@ -58,85 +59,92 @@
 			left: 45%;
 		}
 
-		#img-preview-div{
+		#img-preview-div {
 			margin-top: 2vh;
-    		border: 1px dashed;
+			border: 1px dashed;
 		}
-    </style>
-	</head>
-	<body>
-		<div class="section section-hero bg-gray">
-			<div class="grid-hero container grid-lg text-center" id="overview">
-				<div class="docs-brand">
-					<br>
-					<h1>Key-Short-img</h1>
-					<h2>
-						A <u>Keyboard</u>-<u>Shortcut</u>-<u>Image</u> Generator
-					</h2>
-					
-					<form>
-						<div class="form-group">
-							OS : 
-							<label class="form-radio form-inline">
-							  <input type="radio" name="windows" checked><i class="form-icon"></i> Windows
-							</label>
-							<label class="form-radio form-inline">
-							  <input type="radio" name="mac"><i class="form-icon"></i> Mac
-							</label>
-							<label class="form-radio form-inline">
-								<input type="radio" name="other"><i class="form-icon"></i> Other
-							  </label>
-							  <label class="form-radio form-inline">
-								<input type="radio" name="text"><i class="form-icon"></i> Text
-							  </label>
-						</div>
-					  </form>
-					<p>
-						<label class="form-radio form-inline"></label>
-							<icon id="meta-toggle" class="keyboard-key cmd"></icon>
+	</style>
+</head>
+
+<body>
+	<div class="section section-hero bg-gray">
+		<div class="grid-hero container grid-lg text-center" id="overview">
+			<div class="docs-brand">
+				<br>
+				<h1>Key-Short-img</h1>
+				<h2>
+					A <u>Keyboard</u>-<u>Shortcut</u>-<u>Image</u> Generator
+				</h2>
+
+				<form>
+					<div class="form-group">
+						OS :
+						<label class="form-radio form-inline">
+							<input type="radio" name="windows" checked><i class="form-icon"></i> Windows
 						</label>
-						<input class="form-input form-inline" type="text" id="kb-input" placeholder="Press Any Keyboard Shortcut" style="width: 50%; margin: auto;" />
-						<input class="form-input form-inline" type="text" id="user-text-input" placeholder="Type Any Keyboard Shortcut" style="width: 50%; margin: auto;" />
-					</p>
-					<div >
-						<h2>Image Output</h2>
-						<div id="container-output-location">
-							<p id="output-location">
-								<kbd>Ctrl</kbd>+
-								<kbd>Alt</kbd>+
-								<kbd>C</kbd>
-							</p>
-						</div>
+						<label class="form-radio form-inline">
+							<input type="radio" name="mac"><i class="form-icon"></i> Mac
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="other"><i class="form-icon"></i> Other
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="text"><i class="form-icon"></i> Text
+						</label>
 					</div>
-					<br/>
-					<div>
-						<button class="btn btn-primary btn-lg" type="button" id="save-btn">Generate image</button>
+				</form>
+				<p>
+					<label class="form-radio form-inline"></label>
+					<icon id="meta-toggle" class="keyboard-key cmd"></icon>
+					</label>
+					<input class="form-input form-inline" type="text" id="kb-input" placeholder="Press Any Keyboard Shortcut"
+						style="width: 50%; margin: auto;" />
+					<input class="form-input form-inline" type="text" id="user-text-input"
+						placeholder="Type Any Keyboard Shortcut" style="width: 50%; margin: auto;" />
+				</p>
+				<div>
+					<h2>Image Output</h2>
+					<div id="container-output-location">
+						<p id="output-location">
+							<kbd>Ctrl</kbd>+
+							<kbd>Alt</kbd>+
+							<kbd>C</kbd>
+						</p>
 					</div>
+				</div>
+				<br />
+				<div>
+					<button class="btn btn-primary btn-lg" type="button" id="save-btn">Generate image</button>
+				</div>
 
-					<div id="img-preview-div">
-						<h2>Generated Image - (<b>Right click -> Save image as</b> to save the image)</h2>
-						<div id="img-out-preview">
-						</div>
+				<div id="img-preview-div">
+					<h2>Generated Image - (<b>Right click -> Save image as</b> to save the image)</h2>
+					<div id="img-out-preview">
 					</div>
+				</div>
 
-					<br>
-					<br>
-					<h2>
-						<a href="https://github.com/monsterbrain/keyboard-shortcut-image-generator">
-							<img src="img/GitHub-Mark-32px.png" alt="github logo"> Source on Github </a> / <a href="https://github.com/monsterbrain/keyboard-shortcut-image-generator/issues">Post an issue / request new feature</a>
-					</h2>
-				
-					
-					<p class="text-gray">
-						Created by <a href="https://github.com/monsterbrain">Monster Brain</a> / <a href="https://github.com/alexis-">Alex Incognito</a> -- Last Updated: 28-08-2020
-					</p>
+				<br>
+				<br>
+				<h2>
+					<a href="https://github.com/monsterbrain/keyboard-shortcut-image-generator">
+						<img src="img/GitHub-Mark-32px.png" alt="github logo"> Source on Github </a> / <a
+						href="https://github.com/monsterbrain/keyboard-shortcut-image-generator/issues">Post an issue / request new
+						feature</a>
+				</h2>
 
-					<br/>
-					<a class="docs-logo" href="https://github.com/picturepan2/spectre">
-						<img src="img/spectre-logo.svg" alt="Spectre.css CSS Framework">
-							<h2>powered by SPECTRE.css</h2>
-						</a>
-					</div>
+
+				<p class="text-gray">
+					Created by <a href="https://github.com/monsterbrain">Monster Brain</a> / <a
+						href="https://github.com/alexis-">Alex Incognito</a> -- Last Updated: 28-08-2020
+				</p>
+
+				<br />
+				<a class="docs-logo" href="https://github.com/picturepan2/spectre">
+					<img src="img/spectre-logo.svg" alt="Spectre.css CSS Framework">
+					<h2>powered by SPECTRE.css</h2>
+				</a>
 			</div>
-		</body>
-	</html>
+		</div>
+</body>
+
+</html>
