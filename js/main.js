@@ -232,24 +232,29 @@ $("document").ready(function () {
     var kbHtmlString = prefixKeysHtml + "";
 
     if (e.ctrlKey) {
-      kbString += "Ctrl + ";
-      kbHtmlString += "<kbd>Ctrl</kbd>+";
+      kbString += "⌃ Ctrl + ";
+      kbHtmlString += "<kbd>⌃Ctrl</kbd>+";
     }
 
     if (e.altKey) {
-      kbString += "Alt + ";
-      kbHtmlString += "<kbd>Alt</kbd>+";
+      if (myOs == OS.mac) {
+        kbString += "⌥ Option + ";
+        kbHtmlString += "<kbd>⌥Option</kbd>+";
+      } else {
+        kbString += "⌥ Alt + ";
+        kbHtmlString += "<kbd>⌥Alt</kbd>+";
+      }
     }
 
     if (e.shiftKey) {
-      kbString += "Shift + ";
-      kbHtmlString += "<kbd>Shift</kbd>+";
+      kbString += "⇧ Shift + ";
+      kbHtmlString += "<kbd>⇧Shift</kbd>+";
     }
 
     if (e.metaKey) {
       if (myOs == OS.mac) {
         kbString += "⌘ Cmd + ";
-        kbHtmlString += "<kbd>⌘ Cmd</kbd>+";
+        kbHtmlString += "<kbd>⌘Cmd</kbd>+";
       } else if (myOs == OS.windows) {
         kbString += "⊞ Win + ";
         kbHtmlString += "<kbd>⊞ Win</kbd>+";
@@ -265,19 +270,23 @@ $("document").ready(function () {
       e.key != "Alt" &&
       e.key != "Meta"
     ) {
-        console.log(e.key);
-        var tempKey = e.key;
-        if (tempKey == "ArrowLeft") {
-            tempKey = "⬅"
-        } else if (tempKey == "ArrowRight") {
-            tempKey = "👉🏻"
-        } else if (tempKey == "ArrowUp") {
-            tempKey = "⬆"
-        } else if (tempKey == "ArrowDown") {
-            tempKey = "⬇"
+      console.log(e.key);
+      var tempKey = e.key;
+      if (tempKey == "ArrowLeft") {
+        tempKey = "⬅";
+      } else if (tempKey == "ArrowRight") {
+        tempKey = "👉🏻";
+      } else if (tempKey == "ArrowUp") {
+        tempKey = "⬆";
+      } else if (tempKey == "ArrowDown") {
+        tempKey = "⬇";
+      } else if (tempKey == "Backspace") {
+        if (myOs == OS.mac) {
+          tempKey = "Delete";
         }
+      }
       kbString += tempKey;
-      
+
       if (keyMap[id] != undefined) {
         kbHtmlString += "<kbd>" + keyMap[id] + "</kbd>";
       } else {
